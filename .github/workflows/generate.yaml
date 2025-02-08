@@ -2,10 +2,8 @@ name: Generate PDF
 
 on:
   push:
-    branches:
-      - main
-    paths:
-      - 'docs/README.md'
+    tags:
+      - 'v*'
 
 jobs:
   generate-pdf:
