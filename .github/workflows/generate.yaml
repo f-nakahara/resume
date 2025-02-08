@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - 'docs/RESUME.md'
+      - 'docs/README.md'
 
 jobs:
   generate-pdf:
@@ -34,7 +34,7 @@ jobs:
             git config --local user.email "github-actions[bot]@users.noreply.github.com"
             git config --local user.name "github-actions[bot]"
             git pull origin main
-            git add docs/RESUME.pdf
+            git add docs/README.pdf
             git commit -m "docs: 職務経歴書のPDFを更新" || exit 0
             git remote set-url origin https://x-access-token:${GH_PAT}@github.com/${{ github.repository }}
             git push
