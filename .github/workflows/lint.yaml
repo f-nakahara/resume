@@ -4,6 +4,9 @@ on:
   pull_request:
     branches:
       - main
+  push:
+    tags:
+      - 'v[0-9]+\.[0-9]+\.[0-9]+'
 
 jobs:
   lint:
