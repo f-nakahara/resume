@@ -1,5 +1,48 @@
 {
   "plugins": {},
-  "filters": {},
-  "rules": {}
+  "filters": {
+    "comments": {
+      "enabeld": true
+    }
+  },
+  "rules": {
+    "preset-ja-technical-writing": {
+      "max-ten": {
+        "max": 3
+      },
+      "no-mix-dearu-desumasu": {
+        "preferInHeader": "ですます",
+        "preferInBody": "ですます",
+        "preferInList": "ですます"
+      },
+      "sentence-length": {
+        "max": 100
+      },
+      "max-kanji-continuous-len": {
+        "max": 8,
+        "allow": [
+          "普通自動車第一種運転免許",
+          "鹿児島大学大学院"
+        ]
+      },
+      "ja-no-mixed-period": false,
+      "ja-no-redundant-expression": {
+        "dictOptions": {
+          "dict5": false
+        }
+      },
+      "no-exclamation-question-mark": false
+    },
+    "@textlint-ja/no-dropping-i": true,
+    "ja-space-around-link": true,
+    "no-doubled-joshi": {
+      "min_interval": 1
+    },
+    "no-dropping-the-ra": true,
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      }
+    }
+  }
 }

@@ -8,8 +8,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "NODE_NO_WARNINGS=1 textlint -c .textlintrc.json . && markdownlint -c .markdownlint.jsonc docs/*.md",
-    "build:pdf": "md-to-pdf docs/README.md --config-file ./pdf-configs/config.js --launch-options '{\"args\":[\"--no-sandbox\",\"--disable-setuid-sandbox\"]}'"
+    "textlint": "NODE_NO_WARNINGS=1 textlint -c .textlintrc.json docs/RESUME.md",
+    "textlint:fix": "NODE_NO_WARNINGS=1 textlint -c .textlintrc.json --fix docs/RESUME.md",
+    "mdlint": "markdownlint -c .markdownlint.jsonc docs/*.md",
+    "mdlint:fix": "markdownlint -c .markdownlint.jsonc --fix docs/*.md",
+    "lint": "npm run textlint && npm run mdlint",
+    "lint:fix": "npm run textlint:fix && npm run mdlint:fix",
+    "build:pdf": "md-to-pdf docs/RESUME.md --config-file ./pdf-configs/config.js --launch-options '{\"args\":[\"--no-sandbox\",\"--disable-setuid-sandbox\"]}'"
   },
   "repository": {
     "type": "git",
@@ -24,8 +29,19 @@
   },
   "homepage": "https://github.com/f-nakahara/resume#readme",
   "devDependencies": {
+    "@proofdict/textlint-rule-proofdict": "^3.1.2",
+    "@textlint-ja/textlint-rule-no-dropping-i": "^3.0.0",
     "markdownlint-cli": "^0.44.0",
     "md-to-pdf": "^5.2.4",
-    "textlint": "^14.4.2"
+    "textlint": "^14.4.2",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-ja-space-around-link": "^2.4.2",
+    "textlint-rule-no-doubled-joshi": "^5.1.0",
+    "textlint-rule-no-dropping-the-ra": "^3.0.0",
+    "textlint-rule-preset-ja-spacing": "^2.4.3",
+    "textlint-rule-preset-ja-technical-writing": "^12.0.2",
+    "textlint-rule-prh": "^6.0.0",
+    "textlint-rule-rousseau": "^1.4.8",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
 }
