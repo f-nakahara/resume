@@ -2,9 +2,10 @@ name: Generate PDF
 
 on:
   push:
-    tags:
-      - 'v[0-9]+\.[0-9]+\.[0-9]+'
-  workflow_dispatch:
+    branches:
+      - main
+    paths:
+      - 'docs/RESUME.md'
 
 jobs:
   generate-pdf:
