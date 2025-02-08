@@ -25,16 +25,14 @@
           "鹿児島大学大学院"
         ]
       },
-      "ja-no-mixed-period": {
-        "allowPeriodMarks": ["."]
-      },
+      "ja-no-mixed-period": false,
       "ja-no-redundant-expression": {
         "dictOptions": {
           "dict5": false
         }
-      }
+      },
+      "no-exclamation-question-mark": false
     },
-    "@proofdict/proofdict": true,
     "@textlint-ja/no-dropping-i": true,
     "ja-space-around-link": true,
     "no-doubled-joshi": {
@@ -45,7 +43,6 @@
       "ja-space-between-half-and-full-width": {
         "space": "always"
       }
-    },
-    "rousseau": true
+    }
   }
 }
